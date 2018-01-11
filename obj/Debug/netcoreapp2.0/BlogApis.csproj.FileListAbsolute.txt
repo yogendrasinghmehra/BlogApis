@@ -1,0 +1,10 @@
+F:\Angular-Projects\BlogApis\bin\Debug\netcoreapp2.0\BlogApis.deps.json
+F:\Angular-Projects\BlogApis\bin\Debug\netcoreapp2.0\BlogApis.runtimeconfig.json
+F:\Angular-Projects\BlogApis\bin\Debug\netcoreapp2.0\BlogApis.runtimeconfig.dev.json
+F:\Angular-Projects\BlogApis\bin\Debug\netcoreapp2.0\BlogApis.dll
+F:\Angular-Projects\BlogApis\bin\Debug\netcoreapp2.0\BlogApis.pdb
+F:\Angular-Projects\BlogApis\obj\Debug\netcoreapp2.0\BlogApis.csproj.CoreCompileInputs.cache
+F:\Angular-Projects\BlogApis\obj\Debug\netcoreapp2.0\BlogApis.AssemblyInfoInputs.cache
+F:\Angular-Projects\BlogApis\obj\Debug\netcoreapp2.0\BlogApis.AssemblyInfo.cs
+F:\Angular-Projects\BlogApis\obj\Debug\netcoreapp2.0\BlogApis.dll
+F:\Angular-Projects\BlogApis\obj\Debug\netcoreapp2.0\BlogApis.pdb
