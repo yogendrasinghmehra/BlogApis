@@ -6,17 +6,21 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using BlogApis.Models;
+using System.Linq;
+using System.Collections;
 
 namespace BlogApis.Controllers
 {
   [Route("api/[controller]")]
   public class TokenController : Controller
   {
-    private IConfiguration _config;
-
-    public TokenController(IConfiguration config)
+    private IConfiguration _config;   
+     private BlogDbContext blogDbContext;
+    public TokenController(IConfiguration config,BlogDbContext blogDb)
     {
       _config = config;
+      blogDbContext=blogDb;
     }
 
     [AllowAnonymous]
@@ -51,7 +55,10 @@ namespace BlogApis.Controllers
      private UserModel Authenticate(LoginModel login)
      {
         UserModel user = null;
-
+       
+      
+       var data= blogDbContext.Admin.Any(i=>i.Name=="yogi@gmail.com");
+        // var admin=dbContext.Admin.Any(i=>i.Name=="yogendra@gmail.com" && i.Password=="123456");
         if (login.Username == "mario" && login.Password == "secret")
         {
             user = new UserModel { Name = "Mario Rossi", Email = "mario.rossi@domain.com"};
