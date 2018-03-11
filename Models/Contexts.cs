@@ -7,8 +7,11 @@ namespace BlogApis.Models
     {
         public BlogDbContext(DbContextOptions<BlogDbContext> options):base(options)
         {}
-        //public BlogDbContext(){}
+        //public BlogDbContext(){}  
         public DbSet<Admin> Admin {get;set;}
+        public DbSet<Tags> Tags { get; set; }
+
+        public DbSet<Blog> Blog { get; set; }
 
     }
 }

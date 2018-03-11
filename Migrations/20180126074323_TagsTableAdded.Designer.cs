@@ -11,9 +11,10 @@ using System;
 namespace BlogApis.Migrations
 {
     [DbContext(typeof(BlogDbContext))]
-    partial class BlogDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180126074323_TagsTableAdded")]
+    partial class TagsTableAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,45 +35,14 @@ namespace BlogApis.Migrations
                     b.ToTable("Admin");
                 });
 
-            modelBuilder.Entity("BlogApis.Models.Entities.Blog", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Content")
-                        .IsRequired();
-
-                    b.Property<DateTime?>("CreatedDate");
-
-                    b.Property<bool>("IsActive");
-
-                    b.Property<DateTime?>("ModifiedDate");
-
-                    b.Property<int>("TagsId");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
-                    b.Property<string>("urlslug")
-                        .IsRequired()
-                        .HasMaxLength(30);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TagsId");
-
-                    b.ToTable("Blog");
-                });
-
             modelBuilder.Entity("BlogApis.Models.Entities.Tags", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime?>("CreatedDate");
+                    b.Property<DateTime>("CreatedDate");
 
-                    b.Property<bool?>("IsActive");
+                    b.Property<bool>("IsActive");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -81,14 +51,6 @@ namespace BlogApis.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tags");
-                });
-
-            modelBuilder.Entity("BlogApis.Models.Entities.Blog", b =>
-                {
-                    b.HasOne("BlogApis.Models.Entities.Tags", "Tags")
-                        .WithMany()
-                        .HasForeignKey("TagsId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

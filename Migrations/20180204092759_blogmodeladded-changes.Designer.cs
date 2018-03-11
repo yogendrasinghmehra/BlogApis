@@ -11,9 +11,10 @@ using System;
 namespace BlogApis.Migrations
 {
     [DbContext(typeof(BlogDbContext))]
-    partial class BlogDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180204092759_blogmodeladded-changes")]
+    partial class blogmodeladdedchanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,15 +49,11 @@ namespace BlogApis.Migrations
 
                     b.Property<DateTime?>("ModifiedDate");
 
-                    b.Property<int>("TagsId");
+                    b.Property<int?>("TagsId");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(100);
-
-                    b.Property<string>("urlslug")
-                        .IsRequired()
-                        .HasMaxLength(30);
 
                     b.HasKey("Id");
 
@@ -87,8 +84,7 @@ namespace BlogApis.Migrations
                 {
                     b.HasOne("BlogApis.Models.Entities.Tags", "Tags")
                         .WithMany()
-                        .HasForeignKey("TagsId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("TagsId");
                 });
 #pragma warning restore 612, 618
         }

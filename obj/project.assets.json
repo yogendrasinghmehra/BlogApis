@@ -12543,11 +12543,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "f:\\Angular-Projects\\BlogApis\\BlogApis.csproj",
+      "projectUniqueName": "F:\\Angular-Projects\\BlogApis\\BlogApis.csproj",
       "projectName": "BlogApis",
-      "projectPath": "f:\\Angular-Projects\\BlogApis\\BlogApis.csproj",
+      "projectPath": "F:\\Angular-Projects\\BlogApis\\BlogApis.csproj",
       "packagesPath": "C:\\Users\\Yogendera\\.nuget\\packages\\",
-      "outputPath": "f:\\Angular-Projects\\BlogApis\\obj\\",
+      "outputPath": "F:\\Angular-Projects\\BlogApis\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

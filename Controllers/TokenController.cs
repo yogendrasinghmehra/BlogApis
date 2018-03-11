@@ -35,7 +35,7 @@ namespace BlogApis.Controllers
         var tokenString = BuildToken(user);
         response = Ok(new { token = tokenString });
       }
-
+  
       return response;
     }
 
@@ -54,14 +54,11 @@ namespace BlogApis.Controllers
 
      private UserModel Authenticate(LoginModel login)
      {
-        UserModel user = null;
-       
-      
-       var data= blogDbContext.Admin.Any(i=>i.Name=="yogi@gmail.com");
-        // var admin=dbContext.Admin.Any(i=>i.Name=="yogendra@gmail.com" && i.Password=="123456");
-        if (login.Username == "mario" && login.Password == "secret")
-        {
-            user = new UserModel { Name = "Mario Rossi", Email = "mario.rossi@domain.com"};
+        UserModel user = null; 
+        var getUser=blogDbContext.Admin.Where(i=>i.Name==login.Username && i.Password==login.Password).SingleOrDefault();              
+        if (getUser!=null)
+        {         
+            user = new UserModel { Name = getUser.Name, Email = getUser.Name};
         }
         return user;
      }
