@@ -33,7 +33,7 @@ namespace BlogApis.Controllers
       if (user != null)
       {
         var tokenString = BuildToken(user);
-        response = Ok(new { token = tokenString });
+        response = Ok(new { token = tokenString,expireOn=DateTime.Now.AddMinutes(30).ToString("MM/dd/yyyy hh:mm tt")});
       }
   
       return response;

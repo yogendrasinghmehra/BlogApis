@@ -17,7 +17,7 @@ namespace BlogApis.Models.Entities
         [Required]        
         public string Content { get; set; }  
         [Required]
-        [StringLength(30)]
+        [StringLength(100)]
         public string  urlslug { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }

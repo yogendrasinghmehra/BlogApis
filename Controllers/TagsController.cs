@@ -11,7 +11,7 @@ using System.Data;
 namespace BlogApis.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
+   
     public class TagsController:Controller
     {
         private IConfiguration config;   
@@ -30,6 +30,7 @@ namespace BlogApis.Controllers
         }
 
        [HttpPost]
+       [Authorize]
        public IActionResult AddTags([FromBody] Tags tags)
        {
            IActionResult responce=Unauthorized();
@@ -47,6 +48,7 @@ namespace BlogApis.Controllers
        }
 
        [HttpDelete("{id}")]
+        [Authorize]
        public IActionResult Delete(long id)
        {
          IActionResult responce=NotFound();
